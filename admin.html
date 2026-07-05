@@ -54,6 +54,7 @@
   .iuran-row input{margin-bottom:0;}
   .iuran-row .i-nama{flex:1.5;min-width:120px;}
   .iuran-row .i-nominal{flex:1;min-width:100px;}
+  .iuran-row .i-basis{flex:0.9;min-width:95px;margin-bottom:0;padding:12px 8px;}
   .iuran-row .i-ket{flex:1.2;min-width:100px;}
   .iuran-row .i-remove{flex:0 0 auto;background:transparent;border:1.5px solid var(--danger);color:var(--danger);border-radius:6px;padding:0 12px;cursor:pointer;font-size:16px;}
 </style>
@@ -104,7 +105,7 @@
 
     <div class="card">
       <h2>Kelola Daftar Iuran Keanggotaan</h2>
-      <p class="hint">Daftar ini tampil di halaman publik sebagai acuan nominal iuran per KK. Tambah, ubah, atau hapus sesuai kebutuhan.</p>
+      <p class="hint">Daftar ini tampil di halaman publik sebagai acuan nominal iuran. Untuk iuran yang dihitung per jiwa (mis. iuran kematian: KK + anak), pilih basis "per Jiwa" — nanti saat catat transaksi, rincian per KK bisa diisi pakai fitur Rincian Item (qty = jumlah jiwa yang ditanggung).</p>
       <div id="iuranContainer"></div>
       <button type="button" class="add-item-btn" onclick="addIuranRow()">+ Tambah Jenis Iuran</button>
       <button class="secondary" onclick="saveIuranList()">Simpan Daftar Iuran</button>
@@ -196,7 +197,11 @@ function renderIuranAdmin(){
   container.innerHTML = list.map((it, idx) => `
     <div class="iuran-row">
       <input class="i-nama" placeholder="Nama iuran/kegiatan" value="${(it.nama||'').replace(/"/g,'&quot;')}" onchange="updateIuranField(${idx},'nama',this.value)">
-      <input class="i-nominal" type="number" min="0" placeholder="Nominal per KK" value="${it.nominal||0}" onchange="updateIuranField(${idx},'nominal',this.value)">
+      <input class="i-nominal" type="number" min="0" placeholder="Nominal" value="${it.nominal||0}" onchange="updateIuranField(${idx},'nominal',this.value)">
+      <select class="i-basis" onchange="updateIuranField(${idx},'basis',this.value)">
+        <option value="per KK" ${it.basis==='per KK'?'selected':''}>per KK</option>
+        <option value="per Jiwa" ${it.basis==='per Jiwa'?'selected':''}>per Jiwa</option>
+      </select>
       <input class="i-ket" placeholder="Keterangan (opsional)" value="${(it.keterangan||'').replace(/"/g,'&quot;')}" onchange="updateIuranField(${idx},'keterangan',this.value)">
       <button type="button" class="i-remove" onclick="removeIuranRow(${idx})">&times;</button>
     </div>
@@ -205,7 +210,7 @@ function renderIuranAdmin(){
 
 function addIuranRow(){
   if(!currentData.daftarIuran) currentData.daftarIuran = [];
-  currentData.daftarIuran.push({ nama: "", nominal: 0, keterangan: "" });
+  currentData.daftarIuran.push({ nama: "", nominal: 0, basis: "per KK", keterangan: "" });
   renderIuranAdmin();
 }
 
