@@ -4,13 +4,13 @@
   "daftarIuran": [
     {
       "nama": "Iuran Kematian ",
-      "nominal": 0,
+      "nominal": 10000,
       "basis": "per Jiwa",
       "keterangan": ""
     },
     {
       "nama": "Iuran Arisan ",
-      "nominal": 0,
+      "nominal": 25000,
       "basis": "per KK",
       "keterangan": ""
     }
