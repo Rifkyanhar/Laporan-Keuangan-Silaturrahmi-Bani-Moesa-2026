@@ -1,6 +1,25 @@
 {
   "saldoAwal": 0,
-  "transaksi": [],
+  "transaksi": [
+    {
+      "id": "tx_1783238274645",
+      "tanggal": "2026-07-05",
+      "jenis": "masuk",
+      "kategori": "Iuran Kematian ",
+      "keterangan": "Iuran Kematian Bulan Juli 2026",
+      "jumlah": 40000,
+      "dicatatOleh": "Ibu Anis, Ibu Siti atau Bapak Fauzi",
+      "createdAt": 1783238274645,
+      "rincian": [
+        {
+          "nama": "Bpk Mucharrom",
+          "qty": 4,
+          "satuan": "Jiwa",
+          "harga": 10000
+        }
+      ]
+    }
+  ],
   "daftarIuran": [
     {
       "nama": "Iuran Kematian ",
