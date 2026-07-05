@@ -79,10 +79,10 @@
   <h2 style="font-size:19px;color:var(--accent);margin:0 0 12px;">Daftar Iuran Keanggotaan</h2>
   <table id="iuranTable" style="margin-bottom:32px;">
     <thead>
-      <tr><th>Nama Iuran / Kegiatan</th><th>Nominal per KK</th><th>Keterangan</th></tr>
+      <tr><th>Nama Iuran / Kegiatan</th><th>Nominal</th><th>Basis</th><th>Keterangan</th></tr>
     </thead>
     <tbody id="iuranTbody">
-      <tr><td colspan="3" class="empty">Memuat data…</td></tr>
+      <tr><td colspan="4" class="empty">Memuat data…</td></tr>
     </tbody>
   </table>
 
@@ -138,13 +138,14 @@ function renderIuran(daftarIuran){
   const tbody = document.getElementById("iuranTbody");
   const list = Array.isArray(daftarIuran) ? daftarIuran : [];
   if(list.length === 0){
-    tbody.innerHTML = '<tr><td colspan="3" class="empty">Belum ada daftar iuran yang ditetapkan.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4" class="empty">Belum ada daftar iuran yang ditetapkan.</td></tr>';
     return;
   }
   tbody.innerHTML = list.map(i => `
     <tr>
       <td>${escapeHtml(i.nama)}</td>
       <td class="right bold">${escapeHtml(formatRupiah(i.nominal))}</td>
+      <td>${escapeHtml(i.basis || "per KK")}</td>
       <td>${escapeHtml(i.keterangan || "-")}</td>
     </tr>
   `).join("");
@@ -208,3 +209,6 @@ load();
 </script>
 </body>
 </html>
+
+
+  
