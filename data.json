@@ -1,5 +1,18 @@
 {
   "saldoAwal": 0,
   "transaksi": [],
-  "daftarIuran": []
+  "daftarIuran": [
+    {
+      "nama": "Iuran Kematian ",
+      "nominal": 0,
+      "basis": "per Jiwa",
+      "keterangan": ""
+    },
+    {
+      "nama": "Iuran Arisan ",
+      "nominal": 0,
+      "basis": "per KK",
+      "keterangan": ""
+    }
+  ]
 }
