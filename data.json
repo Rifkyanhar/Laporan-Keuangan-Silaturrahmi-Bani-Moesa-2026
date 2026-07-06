@@ -32,6 +32,12 @@
       "nominal": 25000,
       "basis": "per KK",
       "keterangan": ""
+    },
+    {
+      "nama": "Donatur",
+      "nominal": 1350000,
+      "basis": "per KK",
+      "keterangan": ""
     }
   ]
 }
