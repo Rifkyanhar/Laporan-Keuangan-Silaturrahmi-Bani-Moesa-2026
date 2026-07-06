@@ -18,6 +18,17 @@
           "harga": 10000
         }
       ]
+    },
+    {
+      "id": "tx_1783333606225",
+      "tanggal": "2026-07-06",
+      "jenis": "keluar",
+      "kategori": "Santunan Kematian",
+      "keterangan": "Mbah Munawaroh",
+      "jumlah": 1000000,
+      "dicatatOleh": "Bendahara",
+      "createdAt": 1783333606225,
+      "rincian": []
     }
   ],
   "daftarIuran": [
