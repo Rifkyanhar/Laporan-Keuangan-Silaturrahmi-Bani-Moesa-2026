@@ -2,5 +2,14 @@
   "saldoAwal": 0,
   "transaksi": [],
   "daftarIuran": [],
-  "daftarKK": []
+  "daftarKK": [
+    {
+      "namaKK": "Musthofa ",
+      "anak": [
+        "Rifah Nursekha",
+        "Ghufron Khafid",
+        "Fahrul Sani"
+      ]
+    }
+  ]
 }
