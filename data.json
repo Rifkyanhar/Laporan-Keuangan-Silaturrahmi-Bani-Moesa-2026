@@ -1,1 +1,6 @@
-
+{
+  "saldoAwal": 0,
+  "transaksi": [],
+  "daftarIuran": [],
+  "daftarKK": []
+}
