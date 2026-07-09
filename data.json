@@ -1,7 +1,14 @@
 {
   "saldoAwal": 25000000,
   "transaksi": [],
-  "daftarIuran": [],
+  "daftarIuran": [
+    {
+      "nama": "Iuran Arisan ",
+      "nominal": 25000,
+      "basis": "per KK",
+      "keterangan": "Iuran Rutin 2 Bulan Sekali "
+    }
+  ],
   "daftarKK": [
     {
       "namaKK": "Musthofa ",
